@@ -49,6 +49,29 @@ Another option is to just give the select method a type parameter.
 
 	Selection.select[Int](x, 123456)
 
+Quick Select - Quick Sort's In-Law
+----------------------------------
+
+There is also another version of select, quickSelect, that does much the same
+thing as select, but does it a little quicker in practice. The caveat is that
+it **does not guarantee linear-time performance** (select does). Everything
+select does, quickSelect can as well.
+
+	assert(x.quickSelect(111222) == 111223)
+	assert(x(111222) == 111223)
+	assert(y.quickSelect(111222) == 111223)
+
+Orderings
+---------
+
+Select will use whatever implicit ordering is available (unless passed
+explicitly).
+
+	val ord = new Ordering[Int] {
+	    def compare(a: Int, b: Int) = b - a
+	  }
+	x.select(123)(ord)
+
 Thanks!
 -------
 
