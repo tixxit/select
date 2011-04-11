@@ -13,8 +13,8 @@ The functionality is pretty straightfoward. To run through a few examples,
 	
 	val x = Random.shuffle(1 until 500000 toList) toArray
 
-This selects the 123456th element, so it returns 123457 from the array. It
-moves 123457 to the 123456th position.
+Let's select the 123456th element, so it returns 123457 from the array. It
+will move 123457 to the 123456th position.
 
 	assert(x.select(123456) == 123457)
 	assert(x(123456) == 123457)
@@ -25,8 +25,8 @@ not an Array won't modify it. For instance,
 
 	val y = Random.shuffle(1 until 100000)
 
-	assert(x.select(123456) == 123457)
-	assert(x(123456) != 123457)	// Probably... ;)
+	assert(y.select(123456) == 123457)
+	assert(y(123456) != 123457)	// Probably... ;)
 
 Specialization for Int, Float, and Double
 -----------------------------------------
